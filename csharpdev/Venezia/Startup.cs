@@ -26,6 +26,8 @@ namespace Venezia
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseStaticFiles();
             
             app.UseRouting();
 

@@ -104,3 +104,4 @@ D:\formation\dotnet\csharpav\csharpdev\Venezia\obj\Debug\netcoreapp3.1\Venezia.R
 D:\formation\dotnet\csharpav\csharpdev\Venezia\obj\Debug\netcoreapp3.1\Venezia.Views.pdb
 D:\formation\dotnet\csharpav\csharpdev\Venezia\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\formation\dotnet\csharpav\csharpdev\Venezia\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\formation\dotnet\csharpav\csharpdev\Venezia\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
