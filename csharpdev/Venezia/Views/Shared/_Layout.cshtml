@@ -20,9 +20,12 @@
 
 </head>
 <body>
-    <div>Menu</div>
+   @await Component.InvokeAsync("Menu")
+
     <div>@RenderBody()</div>
-    <div>Footer</div>
+
+    <partial name="_Footer" />
+    
     <environment include="Development,Staging">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

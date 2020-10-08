@@ -12,5 +12,12 @@ namespace Venezia.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        [Route("a-propos-de-nous", Name = "RouteAbout")]
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }

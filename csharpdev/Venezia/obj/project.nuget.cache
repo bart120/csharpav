@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+dGLfrZOXgxBkYKxJ5L1l0/qUqMjH+cC7mywFKFDHbseS9xcYo28sKf6xat7NmNNWkezFfEx3oKmbrD/hov4GA==",
+  "dgSpecHash": "m3+Jm0jDZ1WfsMkJaLaB4PHJsDiUC79xXn8b5OXkl78RYCup1zJ/rGk9R0InbNlj4Y42MM7dsInWSJfU6g6YxA==",
   "success": true,
   "projectFilePath": "D:\\formation\\dotnet\\csharpav\\csharpdev\\Venezia\\Venezia.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vlecl\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",
     "C:\\Users\\vlecl\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\vlecl\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\vlecl\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
