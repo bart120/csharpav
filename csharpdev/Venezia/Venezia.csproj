@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201009102148_Test.cs" />
+    <Compile Remove="Migrations\20201009102148_Test.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\site.min.css" />
   </ItemGroup>
 
