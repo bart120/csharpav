@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Venezia.Attributes;
 
 namespace Venezia.Models
 {
@@ -14,6 +15,7 @@ namespace Venezia.Models
 
         [Column("Marque")]
         [Display(Name ="Marque", Prompt = "Marque du véhicule")]
+        [BlackList("peugeot", ErrorMessage = "Pas de Peugeot")]
         public string Mark { get; set; }
 
         [Display(Name = "Modèle", Prompt = "Modèle du véhicule")]

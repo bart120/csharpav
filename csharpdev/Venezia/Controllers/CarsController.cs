@@ -56,10 +56,10 @@ namespace Venezia.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Mark,Model,Price,FuelType,Autonomous")] Car car)
         {
-            if(car?.Mark?.ToLower() == "peugeot")
+            /*if(car?.Mark?.ToLower() == "peugeot")
             {
                 ModelState.AddModelError("Mark", "Pas de peugeot!! ok!!");
-            }
+            }*/
             if (ModelState.IsValid)
             {
                 _context.Add(car);
