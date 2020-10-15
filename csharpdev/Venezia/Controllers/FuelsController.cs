@@ -10,28 +10,22 @@ using Venezia.Models;
 
 namespace Venezia.Controllers
 {
-    public class CarsController : Controller
+    public class FuelsController : Controller
     {
         private readonly VeneziaContext _context;
 
-        public CarsController(VeneziaContext context)
+        public FuelsController(VeneziaContext context)
         {
             _context = context;
         }
 
-        private async Task PrepareViewBag()
-        {
-            ViewBag.Fuels = new SelectList(await _context.Fuel.ToListAsync(), "ID", "Label");
-        }
-
-        // GET: Cars
+        // GET: Fuels
         public async Task<IActionResult> Index()
         {
-            var cars = await _context.Car.Include(x => x.FuelType).ToListAsync();
-            return View(cars);
+            return View(await _context.Fuel.ToListAsync());
         }
 
-        // GET: Cars/Details/5
+        // GET: Fuels/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -39,44 +33,39 @@ namespace Venezia.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Car.Include(x => x.FuelType)
+            var fuel = await _context.Fuel
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (car == null)
+            if (fuel == null)
             {
                 return NotFound();
             }
-            return View(car);
+
+            return View(fuel);
         }
 
-        // GET: Cars/Create
-        public async Task<IActionResult> Create()
+        // GET: Fuels/Create
+        public IActionResult Create()
         {
-            //this.ViewBag.Fuels = await _context.Fuel.ToListAsync();
-            await PrepareViewBag();
             return View();
         }
 
-        // POST: Cars/Create
+        // POST: Fuels/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Mark,Model,Price,FuelTypeID,Autonomous")] Car car)
+        public async Task<IActionResult> Create([Bind("ID,Label")] Fuel fuel)
         {
-            /*if(car?.Mark?.ToLower() == "peugeot")
-            {
-                ModelState.AddModelError("Mark", "Pas de peugeot!! ok!!");
-            }*/
             if (ModelState.IsValid)
             {
-                _context.Add(car);
+                _context.Add(fuel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(car);
+            return View(fuel);
         }
 
-        // GET: Cars/Edit/5
+        // GET: Fuels/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,23 +73,22 @@ namespace Venezia.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Car.FindAsync(id);
-            if (car == null)
+            var fuel = await _context.Fuel.FindAsync(id);
+            if (fuel == null)
             {
                 return NotFound();
             }
-            await PrepareViewBag();
-            return View(car);
+            return View(fuel);
         }
 
-        // POST: Cars/Edit/5
+        // POST: Fuels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Mark,Model,Price,FuelTypeID,Autonomous")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Label")] Fuel fuel)
         {
-            if (id != car.ID)
+            if (id != fuel.ID)
             {
                 return NotFound();
             }
@@ -109,12 +97,12 @@ namespace Venezia.Controllers
             {
                 try
                 {
-                    _context.Update(car);
+                    _context.Update(fuel);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CarExists(car.ID))
+                    if (!FuelExists(fuel.ID))
                     {
                         return NotFound();
                     }
@@ -125,11 +113,10 @@ namespace Venezia.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            await PrepareViewBag();
-            return View(car);
+            return View(fuel);
         }
 
-        // GET: Cars/Delete/5
+        // GET: Fuels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,30 +124,30 @@ namespace Venezia.Controllers
                 return NotFound();
             }
 
-            var car = await _context.Car
+            var fuel = await _context.Fuel
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (car == null)
+            if (fuel == null)
             {
                 return NotFound();
             }
 
-            return View(car);
+            return View(fuel);
         }
 
-        // POST: Cars/Delete/5
+        // POST: Fuels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var car = await _context.Car.FindAsync(id);
-            _context.Car.Remove(car);
+            var fuel = await _context.Fuel.FindAsync(id);
+            _context.Fuel.Remove(fuel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CarExists(int id)
+        private bool FuelExists(int id)
         {
-            return _context.Car.Any(e => e.ID == id);
+            return _context.Fuel.Any(e => e.ID == id);
         }
     }
 }

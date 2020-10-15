@@ -28,8 +28,9 @@ namespace Venezia
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<VeneziaContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("VeneziaContext")));
+            services.AddDbContext<VeneziaContext>(options => options
+                    .UseLoggerFactory(VeneziaContext.SqlLogger)
+                    .UseSqlServer(Configuration.GetConnectionString("VeneziaContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
