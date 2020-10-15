@@ -17,15 +17,17 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
         <link href="~/css/site.min.css" rel="stylesheet" />
     </environment>
+    @RenderSection("SectionStyles", false)
 
 </head>
 <body>
-   @await Component.InvokeAsync("Menu")
+    @await Component.InvokeAsync("Menu")
 
     <div class="container">@RenderBody()</div>
 
     <partial name="_Footer" />
-    
+    @RenderSection("SectionFooter", false)
+
     <environment include="Development,Staging">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -36,5 +38,7 @@
                 crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </environment>
+
+    @RenderSection("SectionScripts", false)
 </body>
 </html>
