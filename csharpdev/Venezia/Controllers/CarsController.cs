@@ -39,7 +39,6 @@ namespace Venezia.Controllers
             {
                 return NotFound();
             }
-
             return View(car);
         }
 

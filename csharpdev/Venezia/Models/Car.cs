@@ -12,10 +12,10 @@ namespace Venezia.Models
     public class Car
     {
         public int ID { get; set; }
-
+        
         [Column("Marque")]
         [Display(Name ="Marque", Prompt = "Marque du véhicule")]
-        [BlackList("peugeot", ErrorMessage = "Pas de Peugeot")]
+        [BlackList("peugeot", "citroen", "fiat", ErrorMessage = "Pas de Peugeot")]
         public string Mark { get; set; }
 
         [Display(Name = "Modèle", Prompt = "Modèle du véhicule")]
