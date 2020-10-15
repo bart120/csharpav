@@ -15,7 +15,7 @@ namespace Venezia.Models
         
         [Column("Marque")]
         [Display(Name ="Marque", Prompt = "Marque du véhicule")]
-        [BlackList("peugeot", "citroen", "fiat", ErrorMessage = "Pas de Peugeot")]
+        [BlackList("peugeot", "citroen", "fiat", ErrorMessage = "Pas de {1} dans le champ {0}")]
         public string Mark { get; set; }
 
         [Display(Name = "Modèle", Prompt = "Modèle du véhicule")]
