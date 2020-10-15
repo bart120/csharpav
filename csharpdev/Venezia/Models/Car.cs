@@ -27,16 +27,19 @@ namespace Venezia.Models
         [Column(TypeName = "decimal(10, 2)")]
         public decimal? Price { get; set; }
 
-        [Display(Name = "Carburant", Prompt = "Carburant du véhicule")]
+        [ForeignKey("FuelTypeID")]
         public Fuel FuelType { get; set; }
+
+        [Display(Name = "Carburant", Prompt = "Carburant du véhicule")]
+        public int FuelTypeID { get; set; }
 
         [Display(Name = "Voiture autonome")]
         public bool Autonomous { get; set; }
     }
 
-    public enum Fuel
+    /*public enum Fuel
     {
         Gasoline,
         Diesel
-    }
+    }*/
 }

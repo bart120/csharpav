@@ -9,6 +9,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20201009102148_Test.cs" />
     <Compile Remove="Migrations\20201009102148_Test.Designer.cs" />
+    <Compile Remove="Migrations\20201015093645_AdFduel.cs" />
+    <Compile Remove="Migrations\20201015093645_AdFduel.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
