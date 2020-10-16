@@ -51,12 +51,18 @@
 @section SectionScripts{
     <script>
         $(document).ready(() => {
-            $("#btn-add-car").click(() => {
+            $("#btn_add_car").click(() => {
                 $.ajax({
                     url: '/basket/AddCarToBasket',
                     method: 'POST',
                     dataType: 'json',
-                    data: {}
+                    data: { idCar: @Model.ID},
+                    success: (obj) => {
+                        console.log(obj);
+                    },
+                    error: (err) => {
+                        console.warn(err);
+                    }
                 });
             });
         });

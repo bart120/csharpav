@@ -28,6 +28,8 @@ namespace Venezia
         {
             services.AddControllersWithViews();
 
+            services.AddSession();
+
             services.AddDbContext<VeneziaContext>(options => options
                     .UseLoggerFactory(VeneziaContext.SqlLogger)
                     .UseSqlServer(Configuration.GetConnectionString("VeneziaContext")));
@@ -44,6 +46,7 @@ namespace Venezia
             app.UseStaticFiles();
             
             app.UseRouting();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
