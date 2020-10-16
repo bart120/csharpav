@@ -12,18 +12,21 @@ namespace Venezia.Controllers
     public class BasketController : Controller
     {
         [HttpPost]
-        public JsonResult AddCarToBasket(int idCar)
+        public IActionResult AddCarToBasket(int idCar)
         {
+           
             Basket basket;
             if (this.HttpContext.Session.GetString("BASKET") == null)
                 basket = new Basket();
             else
+            {
                 basket = JsonConvert.DeserializeObject<Basket>(this.HttpContext.Session.GetString("BASKET"));
-            
-                
-            basket.Cars.Add(idCar);
-            this.HttpContext.Session.SetString("BASKET",JsonConvert.SerializeObject(basket));
-            return Json(basket);
+
+            }
+            basket.AddCar(idCar);
+            var json = basket.ToJson();
+            this.HttpContext.Session.SetString("BASKET",json);
+            return Ok(json);
         }
     }
 }
