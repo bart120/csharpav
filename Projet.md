@@ -23,12 +23,12 @@ Pour afficher le nom de l'utilisateur connecté, vous devez créer et utiliser u
 
 ## Filtres (3 points)
 
-Pour les modèles et les marques, les parties Ajout, modification et supression seront soumise à une identification pour être [accessible](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute?view=aspnetcore-3.1)
+Pour les modèles et les marques, les parties Ajout, modification et supression seront soumises à une identification pour être [accessibles](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute?view=aspnetcore-3.1)
 
 ## Administration des utilisateurs (7 points)
 
 Vous allez créer une [Area](https://docs.microsoft.com/fr-fr/aspnet/core/mvc/controllers/areas?view=aspnetcore-3.1) pour administrer les utilisateurs.
-Cette area ne sera uniquement accessible au utilisateur connecté qui auront le role ADMIN.
+Cette area ne sera uniquement accessible aux utilisateurs connectés qui auront le role ADMIN.
 Il y aura donc 2 roles, ADMIN et SIMPLE
 Dans cette area, on doit pouvoir:
  - ajouter / modifier / supprimer un utilisateur
@@ -36,7 +36,7 @@ Dans cette area, on doit pouvoir:
 
 ## Bonus (3 points)
 Dans l'area d'administration, on rajoute:
- - Voir la liste des utilisateurs actullement connectés.
+ - La liste des utilisateurs actullement connectés.
  - Pouvoir déconnecter un utilisateur connecté.
 
 # Fonctionnement
