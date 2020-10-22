@@ -23,6 +23,7 @@ namespace Venezia.Controllers
         [Route("mon-panier", Name = "BasketUrl")]
         public async Task<IActionResult> Index()
         {
+            
             var vm = new BasketViewModel();
             if (this.HttpContext.Session.GetString("BASKET") != null)
             {

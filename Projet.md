@@ -23,7 +23,7 @@ Pour afficher le nom de l'utilisateur connecté, vous devez créer et utiliser u
 
 ## Filtres (3 points)
 
-Pour les modèles et les marques, les parties Ajout, modification et supression seront soumises à une identification pour être [accessibles](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute?view=aspnetcore-3.1)
+Pour les modèles et les carburants, les parties Ajout, modification et supression seront soumises à une identification pour être [accessibles](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute?view=aspnetcore-3.1)
 
 ## Administration des utilisateurs (7 points)
 
